@@ -4,7 +4,7 @@ from uuid import uuid4
 
 TOTAL_UUID = 20_000_000
 BATCH_SIZE = 20_000_000
-NUM_BATCHES = TOTAL_UUID // BATCH_SIZE if TOTAL_UUID % BATCH_SIZE == 0 else NUM_BATCHES + 1
+NUM_BATCHES = TOTAL_UUID // BATCH_SIZE if TOTAL_UUID % BATCH_SIZE == 0 else TOTAL_UUID // BATCH_SIZE + 1
 
 # running batch for every 20 million
 for i in range(NUM_BATCHES):
