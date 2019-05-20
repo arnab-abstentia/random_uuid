@@ -20,7 +20,7 @@ NUM_ROWS = 20
 for i in range(NUM_BATCHES):
     # gurantees uniqueness for every 20 million uuid
     # uid_container = [str(uuid4()).replace('-', '')[:8] for i in range(BATCH_SIZE)]
-    uid_container = list(generate_radom_uid())[:TOTAL_UUID]
+    uid_container = list(generate_radom_uid(num_uuid=TOTAL_UUID))[:TOTAL_UUID]
     # creating batch of 20 rows
     container_batch = [uid_container[x:x+NUM_ROWS] for x in range(0, len(uid_container), NUM_ROWS)]
     # reducing memory footprint by deleting the set object
